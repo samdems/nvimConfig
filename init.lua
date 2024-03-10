@@ -5,12 +5,12 @@ vim.g.mapleader = " "
 
 require("config.lazy")
 local harpoon = require("harpoon")
-local cmp = require('cmp')
-local cmp_action = require('lsp-zero.cmp').action() 
 local builtin = require('telescope.builtin')
 
 vim.cmd[[colorscheme tokyonight]]
 vim.api.nvim_command('set colorcolumn=120,80')
+vim.wo.number = true
+vim.wo.relativenumber = true
 
 harpoon:setup()
 
@@ -21,6 +21,7 @@ require("conform").setup({
     python = { "isort", "black" },
     -- Use a sub-list to run only the first available formatter
     javascript = { { "prettierd", "prettier" } },
+    php = { "pint"},
   },
 })
 
@@ -39,5 +40,5 @@ vim.keymap.set('n', '<leader>s', ':vsplit<CR>', {})
 vim.keymap.set("n", "<leader>ha", function() harpoon:list():append() end)
 vim.keymap.set("n", "<leader>hz", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
 
-vim.keymap.set("n", "<leader>F", function() require("conform").format({ formatters = { "injected" } }) end)
+vim.keymap.set("n", "<leader>fm", function() require("conform").format() end)
 
