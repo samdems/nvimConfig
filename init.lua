@@ -27,4 +27,23 @@ vim.keymap.set('n', '<leader>s', ':vsplit<CR>', {})
 vim.keymap.set("n", "<leader>ha", function() harpoon:list():append() end)
 vim.keymap.set("n", "<leader>hz", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
 
+local hop = require('hop')
+local directions = require('hop.hint').HintDirection
+
+vim.keymap.set('', 'f', function()
+  hop.hint_char1({ direction = directions.AFTER_CURSOR})
+end, {remap=true})
+
+vim.keymap.set('', 'F', function()
+  hop.hint_char1({ direction = directions.BEFORE_CURSOR})
+end, {remap=true})
+
+vim.keymap.set('', 't', function()
+  hop.hint_char1({ direction = directions.AFTER_CURSOR, hint_offset = -1 })
+end, {remap=true})
+
+vim.keymap.set('', 'T', function()
+  hop.hint_char1({ direction = directions.BEFORE_CURSOR, hint_offset = 1 })
+end, {remap=true})
+
 vim.api.nvim_set_keymap('n', '<leader>cf', ':lua require("conform").format()<CR>', { noremap = true, silent = true })
