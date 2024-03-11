@@ -14,17 +14,6 @@ vim.wo.relativenumber = true
 
 harpoon:setup()
 
-require("conform").setup({
-  formatters_by_ft = {
-    lua = { "stylua" },
-    -- Conform will run multiple formatters sequentially
-    python = { "isort", "black" },
-    -- Use a sub-list to run only the first available formatter
-    javascript = { { "prettierd", "prettier" } },
-    php = { "pint"},
-  },
-})
-
 
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader> ', builtin.git_files,{})
@@ -33,12 +22,9 @@ vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 
 vim.api.nvim_set_keymap('n', '<leader>t', ':Neotree<CR>', {noremap = true, silent = true})
 
-
 vim.keymap.set('n', '<leader>s', ':vsplit<CR>', {})
-
 
 vim.keymap.set("n", "<leader>ha", function() harpoon:list():append() end)
 vim.keymap.set("n", "<leader>hz", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
 
-vim.keymap.set("n", "<leader>fm", function() require("conform").format() end)
-
+vim.api.nvim_set_keymap('n', '<leader>cf', ':lua require("conform").format()<CR>', { noremap = true, silent = true })
