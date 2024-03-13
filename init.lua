@@ -11,6 +11,7 @@ vim.cmd[[colorscheme tokyonight]]
 vim.api.nvim_command('set colorcolumn=120,80')
 vim.wo.number = true
 vim.wo.relativenumber = true
+vim.wo.wrap = false 
 
 harpoon:setup()
 
@@ -88,3 +89,9 @@ require('lualine').setup {
   inactive_winbar = {},
   extensions = {}
 }
+
+local set = vim.opt -- set options
+set.tabstop = 4
+set.softtabstop = 4
+set.shiftwidth = 4
+
