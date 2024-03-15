@@ -11,7 +11,7 @@ vim.cmd[[colorscheme tokyonight]]
 vim.api.nvim_command('set colorcolumn=120,80')
 vim.wo.number = true
 vim.wo.relativenumber = true
-vim.wo.wrap = false 
+vim.wo.wrap = false;
 
 harpoon:setup()
 
@@ -96,3 +96,5 @@ set.expandtab = true
 set.tabstop = 2
 set.softtabstop = 2
 set.shiftwidth = 2
+
+vim.cmd([[autocmd VimEnter * Copilot auth]])
