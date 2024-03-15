@@ -15,6 +15,8 @@ vim.wo.wrap = false
 
 harpoon:setup()
 
+vim.keymap.set('', '<CR>', function() require("copilot.suggestion").accept() end, {})
+
 
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader> ', builtin.git_files,{})
@@ -94,4 +96,3 @@ local set = vim.opt -- set options
 set.tabstop = 4
 set.softtabstop = 4
 set.shiftwidth = 4
-
