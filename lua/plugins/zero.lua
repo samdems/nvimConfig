@@ -24,8 +24,6 @@ return {
       -- https://github.com/VonHeikemen/lsp-zero.nvim/blob/v2.x/doc/md/api-reference.md#manage_nvim_cmp
 
       require('lsp-zero.cmp').extend()
-
-      
     end
   },
 

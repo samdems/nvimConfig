@@ -16,6 +16,7 @@ return {
         blade = { "blade-formatter", "rustywind" },
         python = { "black" },
         javascript = { "prettierd" },
+        rust =  { "rustfmt" },
       },
       formatters = {
         injected = { options = { ignore_errors = true } },
