@@ -15,8 +15,7 @@ vim.wo.wrap = false
 
 harpoon:setup()
 
-vim.keymap.set('', '<CR>', function() require("copilot.suggestion").accept() end, {})
-
+vim.keymap.set('i', '<C-c>', function() require("copilot.suggestion").accept() end)
 
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader> ', builtin.git_files,{})
