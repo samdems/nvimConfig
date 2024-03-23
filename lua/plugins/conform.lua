@@ -17,6 +17,7 @@ return {
         python = { "black" },
         javascript = { "prettierd" },
         rust =  { "rustfmt" },
+        html = {"prettierd"},
       },
       formatters = {
         injected = { options = { ignore_errors = true } },

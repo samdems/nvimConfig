@@ -17,12 +17,15 @@ harpoon:setup()
 
 vim.keymap.set('i', '<C-c>', function() require("copilot.suggestion").accept() end)
 
+
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader> ', builtin.git_files,{})
 vim.keymap.set('n', '<leader>fo', builtin.oldfiles,{})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 
-vim.api.nvim_set_keymap('n', '<leader>t', ':Neotree<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>t', ':Neotree float reveal=true<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>b', ':Neotree float buffers <CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>x', ':Centerpad<cr>', { silent = true, noremap = true })
 
 vim.keymap.set('n', '<leader>s', ':vsplit<CR>', {})
 
