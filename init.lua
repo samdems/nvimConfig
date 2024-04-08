@@ -17,6 +17,7 @@ harpoon:setup()
 
 vim.keymap.set('i', '<C-c>', function() require("copilot.suggestion").accept() end)
 
+vim.keymap.set('n', '<leader>y', vim.cmd.UndotreeToggle)
 
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader> ', builtin.git_files,{})
@@ -101,3 +102,23 @@ set.softtabstop = 2
 set.shiftwidth = 2
 
 vim.cmd([[autocmd VimEnter * Copilot auth]])
+
+vim.opt.listchars = {
+    eol = '¬',
+    tab = '>·',
+    trail = '~',
+    extends = '>',
+    precedes = '<',
+    space = '·'
+}
+vim.opt.list = true
+
+-- require('tabnine').setup({
+--  disable_auto_comment=true,
+--  accept_keymap="<C-c>",
+--  dismiss_keymap = "<C-]>",
+--  debounce_ms = 800,
+--  suggestion_color = {gui = "#800080", cterm = 244},
+--  exclude_filetypes = {"TelescopePrompt", "NvimTree"},
+--  log_file_path = nil, -- absolute path to Tabnine log file
+-- })

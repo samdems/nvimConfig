@@ -74,6 +74,7 @@ return {
       "xml",
       "yaml",
       "php",
+      "twig",
     },
     incremental_selection = {
       enable = true,
