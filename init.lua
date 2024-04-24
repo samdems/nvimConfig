@@ -14,7 +14,8 @@ vim.wo.relativenumber = true
 vim.wo.wrap = false;
 
 harpoon:setup()
-
+vim.keymap.set('n', '<leader>nn', function() require('neotest').run.run() end)
+vim.keymap.set('n', '<leader>nf', function() require('neotest').run.run(vim.fn.expand('%')) end)
 vim.keymap.set('i', '<C-c>', function() require("copilot.suggestion").accept() end)
 
 vim.keymap.set('n', '<leader>y', vim.cmd.UndotreeToggle)
