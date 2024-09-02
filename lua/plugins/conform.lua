@@ -20,6 +20,7 @@ return {
         rust =  { "rustfmt" },
         html = {"prettierd"},
         graphql = {"prettierd"},
+        vue = {"prettierd"},
       },
       formatters = {
         injected = { options = { ignore_errors = true } },

@@ -30,6 +30,7 @@ return {
       python = true,
       go = true,
       rust = true,
+      vue = true,
 
 		}
 	})
